@@ -1,0 +1,1138 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color); /* Màu nền dự phòng cho body */
+    color: var(--text-color);
+    display: flex; /* Sử dụng Flexbox để đặt thanh nav và main-layout-wrapper */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao viewport */
+    overflow-x: hidden; /* Ngăn cuộn ngang nếu nội dung tràn */
+
+    /* --- FULL-PAGE BACKGROUND IMAGE CHO BODY --- */
+    background-image: url('backroud.jpg'); /* ĐẢM BẢO ĐƯỜNG DẪN NÀY CHÍNH XÁC */
+    background-size: cover; /* Phủ đầy toàn bộ body */
+    background-position: center center; /* Căn giữa ảnh nền */
+    background-repeat: no-repeat; /* Không lặp ảnh */
+    background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
+    /* --- KẾT THÚC FULL-PAGE BACKGROUND IMAGE --- */
+}
+
+/* --- LIGHT THEME --- */
+:root {
+    --background-color: #f4f7f6;
+    --background-color-rgb: 244, 247, 246; /* RGB của #f4f7f6 */
+    --text-color: #333;
+    --primary-color: #ac0606; /* Màu đỏ đậm cho các điểm nhấn */
+    --primary-color-rgb: 172, 6, 6; /* RGB của #ac0606 cho rgba() usage */
+    --primary-color-darker: #8a0505; /* Màu đậm hơn cho trạng thái hover */
+    --secondary-color: #555;
+    --border-color: #ddd; /* Màu xám nhạt cho viền */
+    --header-bg: #e0e0e0;
+    --section-bg: #fff; /* Màu nền cho CÁC SECTION VÀ CỘT THÔNG TIN CÁ NHÂN */
+    --link-color: #007bff;
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    --nav-icon-hover-bg: var(--primary-color);
+    --nav-icon-hover-color: white;
+}
+
+/* --- DARK THEME --- */
+body.dark-theme {
+    --background-color: #282c34;
+    --background-color-rgb: 40, 44, 52; /* RGB của #282c34 */
+    --text-color: #e2e2e2;
+    --primary-color: #61dafb; /* Màu xanh nhạt cho các điểm nhấn trong chế độ tối */
+    --primary-color-rgb: 97, 218, 251; /* RGB của #61dafb */
+    --primary-color-darker: #4faedb; /* Màu đậm hơn cho trạng thái hover trong chế độ tối */
+    --secondary-color: #bbb;
+    --border-color: #444;
+    --header-bg: #3c414a;
+    --section-bg: #32363e; /* Màu nền cho CÁC SECTION VÀ CỘT THÔNG TIN CÁ NHÂN */
+    --link-color: #8be9fd;
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+    --nav-icon-hover-bg: var(--primary-color);
+    --nav-icon-hover-color: var(--background-color);
+}
+
+/* --- THANH MENU CỐ ĐỊNH BÊN TRÁI (NAVIGATIon BAR) --- */
+.cv-nav-icons {
+    position: fixed; /* Cố định vị trí trên màn hình */
+    left: 0; /* Cách lề trái 0 */
+    top: 0; /* Cách lề trên 0 */
+    height: 100%; /* Chiều cao bằng 100% viewport */
+    width: 80px; /* **ĐIỀU CHỈNH: Chiều rộng của thanh menu** */
+    background-color: var(--header-bg);
+    padding-top: 20px; /* Khoảng đệm trên */
+    display: flex;
+    flex-direction: column; /* Sắp xếp các mục theo cột */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    box-shadow: var(--box-shadow);
+    z-index: 1000; /* Đảm bảo nó luôn ở trên cùng */
+}
+
+.nav-links-group {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các link theo cột */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: space-around; /* Phân bố đều khoảng cách giữa các link */
+    flex-grow: 1; /* Cho phép nhóm link mở rộng lấp đầy không gian */
+    width: 100%; /* Chiếm 100% chiều rộng của thanh nav */
+    padding-bottom: 20px; /* Khoảng đệm dưới */
+}
+
+.cv-nav-icons a {
+    color: var(--secondary-color);
+    font-size: 1.8em; /* **ĐIỀU CHỈNH: Kích thước icon menu** */
+    padding: 15px 0; /* **ĐIỀU CHỈNH: Khoảng đệm trên dưới cho mỗi icon** */
+    display: block; /* Để mỗi icon chiếm toàn bộ chiều rộng có thể click */
+    width: 100%; /* Chiếm 100% chiều rộng của thanh nav */
+    text-align: center; /* Căn giữa icon */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cv-nav-icons a:hover {
+    background-color: var(--nav-icon-hover-bg);
+    color: var(--nav-icon-hover-color);
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    position: static; /* Vị trí tĩnh, nằm trong luồng tài liệu */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Khoảng cách giữa slider và text */
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px; /* **ĐIỀU CHỈNH: Chiều cao của switch** */
+    position: relative;
+    width: 60px; /* **ĐIỀU CHỈNH: Chiều rộng của switch** */
+}
+
+.theme-switch input {
+    display: none; /* Ẩn checkbox gốc */
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px; /* **ĐIỀU CHỈNH: Chiều cao của nút trượt** */
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px; /* **ĐIỀU CHỈNH: Chiều rộng của nút trượt** */
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Di chuyển nút trượt */
+}
+
+.slider.round {
+    border-radius: 34px; /* Bo tròn viền slider */
+}
+
+.slider.round:before {
+    border-radius: 50%; /* Bo tròn nút trượt */
+}
+
+.theme-text {
+    color: var(--secondary-color);
+    font-size: 0.8em; /* **ĐIỀU CHỈNH: Kích thước chữ "Dark Mode"** */
+}
+
+.hobbies-content {
+    display: flex; /* Kích hoạt Flexbox cho container chứa các thẻ sở thích */
+    flex-wrap: wrap; /* Cho phép các thẻ xuống dòng nếu không đủ chỗ */
+    gap: 20px; /* Khoảng cách giữa các hobby-card */
+    justify-content: center; /* CĂN GIỮA CÁC THẺ HOBBY-CARD TRONG HÀNG */
+    padding-top: 15px; /* Khoảng cách từ tiêu đề section đến các thẻ */
+    width: 100%; /* Đảm bảo hobbies-content chiếm toàn bộ chiều rộng của cha */
+}
+
+
+.hobby-card {
+    background-color: var(--background-color); /* Màu nền của mỗi thẻ sở thích */
+    border: 1px solid var(--border-color); /* Viền thẻ */
+    border-radius: 12px; /* Bo góc thẻ */
+    padding: 15px 10px; /* Khoảng đệm bên trong thẻ */
+    
+    /* Tính toán chiều rộng tương tự skill-card để chúng nằm ngang */
+    width: calc((100% - 80px) / 5); /* Chiều rộng tính toán cho 5 thẻ trên 1 hàng */
+    max-width: 120px; /* Giới hạn chiều rộng tối đa */
+    min-width: 90px; /* Giới hạn chiều rộng tối thiểu khi co giãn */
+    height: 120px; /* Chiều cao cố định */
+    
+    display: flex;
+    flex-direction: column; /* Sắp xếp icon và chữ theo cột */
+    align-items: center; /* Căn giữa nội dung */
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Đổ bóng nhẹ ban đầu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào width */
+}
+
+/* Hiệu ứng khi hover vào thẻ sở thích (NỔI LÊN) */
+.hobby-card:hover {
+    transform: translateY(-8px); /* Nhấc thẻ lên 8px khi hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Đổ bóng mạnh hơn và rõ hơn khi hover */
+}
+
+.hobby-card img {
+    max-width: 60px; /* Kích thước icon bên trong thẻ */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.hobby-card p {
+    margin: 0;
+    font-size: 1.1em; /* Kích thước chữ sở thích */
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+/* Thêm vào nếu bạn có wrapper chứa các hobby-card để căn giữa toàn bộ nhóm */
+.hobbies-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Căn giữa các thẻ hobby-card trong hàng */
+    padding-top: 15px;
+}
+/* --- KHỐI CHÍNH CỦA CV (MAIN LAYOUT WRAPPER) --- */
+.main-layout-wrapper {
+    flex-grow: 1; /* Cho phép nó mở rộng lấp đầy khoảng trống còn lại */
+    margin-left: 80px; /* Tạo khoảng trống bằng chiều rộng của thanh nav */
+    padding: 20px; /* **ĐIỀU CHỈNH: Khoảng đệm tổng thể bên ngoài các cột** */
+    display: flex; /* Sử dụng Flexbox để đặt các cột bên trong */
+    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+    align-items: flex-start; /* Căn nội dung lên đầu theo chiều dọc */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao viewport */
+    box-sizing: border-box; /* Bao gồm padding trong kích thước */
+
+    /* Bỏ background, border-radius, box-shadow ở đây để background của body được thấy */
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+/* --- CÁC THAY ĐỔI CẦN THIẾT --- */
+    /* Giới hạn độ rộng tối đa của nội dung.
+       Bắt đầu với một giá trị lớn hơn để giảm ít, ví dụ 1400px hoặc 1300px.
+       Bạn có thể giảm dần giá trị này để container hẹp hơn nữa. */
+    max-width: 2300px; 
+    
+    /* Căn giữa nội dung trong phần không gian còn lại sau thanh nav bar (80px).
+       'auto' ở 'margin-right' sẽ tạo khoảng trống đều ở bên phải so với bên trái (80px). */
+    margin: 100px auto 1000px 120px; 
+
+    /* --- THÊM DÒNG NÀY ĐỂ TẠO KHOẢNG TRỐNG GIỮA CÁC CỘT --- */
+    gap: 40px; /* Ví dụ: Tăng khoảng cách lên 40px. Bạn có thể thử 30px, 50px, v.v. */
+    /* Hoặc chỉ muốn gap theo chiều ngang: column-gap: 40px; */
+    /* --- KẾT THÚC THAY ĐỔI --- */
+    /* Thêm margin hai bên để tạo khoảng trống giữa wrapper và cạnh màn hình */
+    margin-right: 20px; /* **ĐIỀU CHỈNH: Khoảng cách lề phải** */
+    margin-top: 20px; /* **ĐIỀU CHỈNH: Khoảng cách lề trên** */
+    margin-bottom: 20px; /* **ĐIỀU CHỈNH: Khoảng cách lề dưới** */
+    width: auto; /* Chiều rộng tự động co giãn theo nội dung con */
+}
+
+/* --- SKILLS SECTION (Mục Kỹ năng) --- */
+.skills-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.tab-button {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    background-color: var(--primary-color-darker);
+    color: white;
+    border-color: var(--primary-color-darker);
+}
+
+.tab-button.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Ẩn tất cả nội dung tab mặc định */
+.skills-content {
+    display: none;
+    padding-top: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Hiển thị nội dung tab active và sắp xếp các thẻ kỹ năng */
+.skills-content.active {
+    display: flex; /* Sắp xếp các skill-card theo hàng ngang */
+    flex-wrap: wrap; /* Cho phép các thẻ xuống dòng nếu không đủ chỗ */
+    gap: 20px; /* Khoảng cách giữa các skill-card (20px ngang và dọc) */
+    justify-content: center; /* Căn giữa các skill-card trong hàng */
+}
+
+/* Keyframe cho hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 10px;
+    /* Tính toán chiều rộng để 5 thẻ nằm vừa 1 hàng (trên màn hình lớn) */
+    /* (100% - 4 * gap) / 5 = (100% - 80px) / 5 */
+    width: calc((100% - 80px) / 5); /* Chiều rộng tính toán cho 5 thẻ trên 1 hàng */
+    max-width: 120px; /* Giới hạn chiều rộng tối đa để không quá lớn */
+    min-width: 90px; /* Giới hạn chiều rộng tối thiểu khi co giãn */
+    height: 120px; /* Chiều cao cố định */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào width */
+}
+
+/* Hiệu ứng khi hover vào thẻ kỹ năng (NỔI LÊN) */
+.skill-card:hover {
+    transform: translateY(-8px); /* Nhấc thẻ lên 8px khi hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Đổ bóng mạnh hơn và rõ hơn khi hover */
+}
+
+.skill-card img {
+    max-width: 60px; /* Kích thước icon bên trong thẻ */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    margin: 0;
+    font-size: 1.1em; /* Kích thước chữ kỹ năng */
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* --- CỘT THÔNG TIN CÁ NHÂN (PERSONAL INFO COLUMN) --- */
+.personal-info-column {
+    width: 450px; /* **ĐIỀU CHỈNH: Chiều rộng cố định của cột thông tin cá nhân** */
+    /* min-width và max-width không cần thiết nếu bạn đã có width cố định cho desktop */
+    
+    /* Các thuộc tính để nó thành khối độc lập có bo góc, đổ bóng */
+    background-color: var(--section-bg); /* Màu nền của cột */
+    border-radius: 12px; /* **ĐIỀU CHỈNH: Độ bo góc** */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Đổ bóng */
+    padding: 20px; /* **ĐIỀU CHỈNH: Khoảng đệm bên trong cột** */
+    
+    border-right: none; /* Bỏ viền phải nếu có */
+    overflow-y: hidden; /* Ẩn thanh cuộn nếu nội dung tràn */
+    
+    position: sticky; /* Giữ vị trí cố định khi cuộn */
+    top: 20px; /* **ĐIỀU CHỈNH: Cách mép trên của viewport (phù hợp với margin-top của main-layout-wrapper)** */
+    align-self: flex-start; /* Để nó dính lên đầu cột flex */
+    height: fit-content; /* Chiều cao tự điều chỉnh theo nội dung */
+    margin-right: 20px; /* **ĐIỀU CHỈNH: Khoảng cách giữa cột thông tin cá nhân và cột nội dung** */
+}
+
+.personal-info-column .profile-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px; /* Khoảng đệm dưới */
+    border-bottom: 1px solid var(--border-color); /* Viền dưới */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
+/* Edit icon (if present) */
+.edit-icon-near-avatar {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: var(--primary-color);
+    font-size: 20px; /* Kích thước icon */
+    background-color: var(--background-color);
+    padding: 8px; /* Khoảng đệm quanh icon */
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.edit-icon-near-avatar:hover {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* AVATAR EFFECTS - NEW PULSE EFFECT */
+.avatar-container {
+    width: 200px; /* Kích thước khung avatar */
+    height: 200px;
+    border-radius: 50%; /* Làm tròn khung */
+    overflow: hidden; /* Cắt ảnh theo khung tròn */
+    margin-bottom: 20px; /* Khoảng cách dưới ảnh */
+    position: relative;
+    
+    /* Hiệu ứng pulse: */
+    box-shadow: 0 0 0 5px rgba(var(--primary-color-rgb), 0.3); /* Viền ban đầu */
+    animation: pulse-avatar 2s infinite alternate ease-in-out; /* Hoạt ảnh "nhấp nháy" nhẹ */
+}
+
+.avatar-effect {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+    border-radius: 50%; /* Đảm bảo ảnh cũng tròn */
+}
+
+/* Keyframes cho hiệu ứng pulse của avatar */
+@keyframes pulse-avatar {
+    0% {
+        box-shadow: 0 0 0 5px rgba(var(--primary-color-rgb), 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(var(--primary-color-rgb), 0.6);
+    }
+}
+
+h1 {
+    margin: 0;
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em; /* **ĐIỀU CHỈNH: Kích thước tên CV** */
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin: 8px 0 0; /* Khoảng cách trên dưới */
+    font-size: 0.9em; /* **ĐIỀU CHỈNH: Kích thước tagline** */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 2px solid transparent;
+    animation: typing-cursor 0.75s infinite;
+}
+
+/* TYPING EFFECT KEYFRAMES */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes typing-cursor {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--secondary-color); }
+}
+
+.char-typing-effect {
+    opacity: 0;
+    animation: fade-in-char 0.05s forwards;
+}
+
+@keyframes fade-in-char {
+    to { opacity: 1; }
+}
+
+.personal-info-column .contact-details,
+.personal-info-column .about-me {
+    padding-bottom: 15px; /* Khoảng đệm dưới */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+    border-bottom: 1px solid var(--border-color); /* Viền dưới */
+}
+
+.personal-info-column .contact-details:last-of-type,
+.personal-info-column .about-me:last-of-type {
+    border-bottom: none; /* Bỏ viền dưới cho mục cuối cùng */
+}
+
+.personal-info-column .contact-details p {
+    margin: 8px 0; /* Khoảng cách trên dưới cho các dòng thông tin */
+    line-height: 1.8;
+    text-align: justify;
+    text-align-last: center; /* Có thể không cần thiết nếu text không justify */
+    padding: 0 5px; /* Khoảng đệm ngang */
+    font-size: 1.2em; /* **ĐIỀU CHỈNH: Kích thước chữ thông tin liên hệ** */
+    display: flex; /* Để căn chỉnh icon và text */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.personal-info-column .contact-details p i { /* Định dạng icon trong contact details */
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+
+.personal-info-column .about-me p {
+    margin: 10px 0; /* Khoảng cách trên dưới */
+    line-height: 1.7;
+    text-align: justify;
+    text-align-last: center; /* Có thể không cần thiết nếu text không justify */
+    padding: 0 5px; /* Khoảng đệm ngang */
+    font-size: 1.2em; /* **ĐIỀU CHỈNH: Kích thước chữ phần giới thiệu** */
+}
+
+.personal-info-column .about-me h2,
+/* Căn giữa tiêu đề "Thông Tin" */
+.personal-info-column .contact-details h2 {
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center; /* THÊM DÒNG NÀY ĐỂ CĂN GIỮA TIÊU ĐỀ */
+}
+
+/* Căn giữa các dòng thông tin chi tiết */
+.personal-info-column .contact-details p {
+    margin: 8px 0;
+    line-height: 1.8;
+    /* text-align: justify;  Có thể bỏ nếu không muốn giãn đều hai biên */
+    text-align: center; /* THÊM DÒNG NÀY ĐỂ CĂN GIỮA NỘI DUNG TỪNG DÒNG */
+    padding: 0 5px;
+    font-size: 1.2em;
+    display: flex; /* Giữ flex để căn icon và text trên cùng một dòng */
+    align-items: center; /* Căn giữa icon và text theo chiều dọc */
+    justify-content: center; /* THÊM DÒNG NÀY ĐỂ CĂN GIỮA CẢ ICON VÀ TEXT TRÊN MỘT DÒNG */
+}
+
+/* Căn giữa tiêu đề "About Me" (nếu có) */
+.personal-info-column .about-me h2 {
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center; /* Đảm bảo cả tiêu đề About Me cũng căn giữa */
+}
+
+/* Căn giữa nội dung About Me */
+.personal-info-column .about-me p {
+    margin: 10px 0;
+    line-height: 1.7;
+    /* text-align: justify; */
+    text-align: center; /* Căn giữa nội dung About Me */
+    padding: 0 5px;
+    font-size: 1.2em;
+}
+
+/* --- CỘT NỘI DUNG CUỘN ĐƯỢC (SCROLLABLE CONTENT COLUMN) --- */
+.scrollable-content-column {
+    flex-grow: 1; /* Cho phép nó mở rộng lấp đầy khoảng trống còn lại */
+    overflow-y: auto; /* CỘT NÀY SẼ CÓ THANH CUỘN DỌC RIÊNG */
+    padding: 0px; /* **ĐIỀU CHỈNH: Khoảng đệm bên trong cột (đã bỏ để các section tự có padding)** */
+    box-sizing: border-box;
+
+    /* Bỏ các thuộc tính màu nền, bo góc, đổ bóng ở đây để các section con tự quản lý */
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    
+    min-height: calc(100vh - 40px); /* Chiều cao tối thiểu, 40px = 2*20px padding của main-layout-wrapper */
+    /* Có thể set max-height nếu muốn nó cuộn ngay cả khi nội dung ít hơn min-height */
+}
+
+/* --- CÁC SECTION BÊN TRONG CỘT NỘI DUNG (Học vấn, Kỹ năng, Dự án) --- */
+.section {
+    background-color: var(--section-bg); /* **ĐIỀU CHỈNH: Màu nền của mỗi section** */
+    padding: 20px; /* **ĐIỀU CHỈNH: Khoảng đệm bên trong mỗi section** */
+    margin-bottom: 20px; /* **ĐIỀU CHỈNH: Khoảng cách dưới mỗi section (tạo khoảng trống giữa các khối)** */
+    border-radius: 8px; /* **ĐIỀU CHỈNH: Độ bo góc cho mỗi section** */
+    box-shadow: var(--box-shadow); /* Đổ bóng cho mỗi section */
+}
+
+.section h2 {
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid var(--primary-color); /* Độ dày và màu viền dưới */
+    padding-bottom: 10px; /* Khoảng đệm dưới tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    font-size: 2em; /* **ĐIỀU CHỈNH: Kích thước tiêu đề section** */
+}
+
+/* --- SECTION SỞ THÍCH (HOBBIES SECTION) --- */
+/* Đã tích hợp vào .section và .hobbies-content ở trên, đây là phần bổ sung/ghi đè nếu cần */
+#hobbies { /* Sử dụng ID để ghi đè style nếu cần cho một section cụ thể */
+    /* background-color: var(--section-bg);  Đã có trong .section */
+    /* padding: 30px; */ /* Nếu muốn padding khác .section */
+    /* margin-bottom: 20px; */ /* Đã có trong .section */
+    /* border-radius: 8px; */ /* Đã có trong .section */
+    /* box-shadow: var(--box-shadow); */ /* Đã có trong .section */
+    display: flex; /* Đảm bảo bố cục flex cho nội dung bên trong */
+    flex-direction: column;
+    align-items: flex-start; /* Căn trái nội dung */
+}
+
+#hobbies h2 {
+    /* Các thuộc tính đã định nghĩa trong .section h2 */
+    font-size: 2em; /* **ĐIỀU CHỈNH: Kích thước tiêu đề "Sở Thích"** */
+    text-align: left; /* Căn trái tiêu đề */
+    width: 100%; /* Đảm bảo tiêu đề chiếm hết chiều rộng */
+}
+
+/* --- Icon Nảy Tường (đặt ở personal-info-column) --- */
+.khung-chua-icon {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của cột chứa nó */
+    height: 80px; /* Chiều cao của khu vực nảy */
+    /* border: 1px dashed #ccc;  Bạn có thể bỏ border này nếu không muốn thấy khung */
+    position: relative; /* Quan trọng để icon định vị tuyệt đối */
+    overflow: hidden; /* Đảm bảo icon không tràn ra ngoài khung */
+    margin: 20px auto 0 auto; /* Đặt ở cuối cột thông tin cá nhân */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f9f9f9;  Bạn có thể bỏ nền này */
+}
+
+.icon-nho-nho {
+    font-size: 45px; /* Kích thước icon */
+    color: var(--primary-color); /* Màu icon */
+    position: absolute; /* Định vị tuyệt đối trong khung chứa */
+    animation: nhatVaDap 2s infinite alternate ease-in-out; /* Hoạt ảnh nảy */
+}
+
+/* Định nghĩa hoạt ảnh nảy */
+@keyframes nhatVaDap {
+    0% {
+        transform: translateX(-40px); /* Bắt đầu từ bên trái một chút */
+    }
+    100% {
+        transform: translateX(40px); /* Di chuyển sang phải một chút */
+    }
+}
+
+
+/* --- CÁC MỤC NHẬP CHUNG (ENTRY ITEM) --- */
+.entry-item {
+    margin-bottom: 20px; /* **ĐIỀU CHỈNH: Khoảng cách dưới mỗi mục nhập (ví dụ: mỗi trường học, mỗi dự án)** */
+    padding-left: 15px; /* Khoảng đệm trái */
+    border-left: 3px solid var(--primary-color); /* Độ dày và màu viền trái */
+    transition: border-color 0.3s ease; /* Chuyển đổi màu viền */
+}
+
+.entry-item:last-child {
+    margin-bottom: 0;
+}
+
+.entry-item h3 {
+    margin: 0 0 5px 0; /* Khoảng cách dưới tiêu đề */
+    color: var(--secondary-color);
+    font-size: 1.5em; /* **ĐIỀU CHỈNH: Kích thước tiêu đề mục nhập (ví dụ: tên trường, tên dự án)** */
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.entry-item ul {
+    list-style-type: disc;
+    margin-left: 20px; /* Khoảng cách trái cho danh sách */
+    padding: 0;
+    color: var(--text-color);
+}
+
+.entry-item ul li {
+    margin-bottom: 5px; /* Khoảng cách giữa các mục trong danh sách */
+    font-size: 1em; /* **ĐIỀU CHỈNH: Kích thước chữ của các gạch đầu dòng** */
+}
+
+.links a {
+    color: var(--link-color);
+    text-decoration: none;
+    margin-right: 15px; /* Khoảng cách giữa các link */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: var(--primary-color-darker);
+}
+
+.project-title-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 0 5px 0;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.project-icon {
+    font-size: 1.5em; /* Kích thước icon dự án */
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.project-link:hover .project-icon {
+    color: var(--primary-color);
+}
+
+/* Social Links in Contact Section */
+.social-links {
+    display: flex;
+    gap: 20px; /* **ĐIỀU CHỈNH: Khoảng cách giữa các icon mạng xã hội** */
+    margin-top: 15px; /* Khoảng cách trên */
+    justify-content: center; /* Căn giữa các icon */
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-links a i {
+    font-size: 3em; /* **ĐIỀU CHỈNH: Kích thước icon mạng xã hội** */
+}
+
+/* Footer (if used) */
+footer {
+    text-align: center;
+    padding: 20px; /* Khoảng đệm footer */
+    margin-top: 20px; /* Khoảng cách trên */
+    background-color: var(--header-bg);
+    color: var(--secondary-color);
+    font-size: 0.9em; /* Kích thước chữ footer */
+    border-top: 1px solid var(--border-color); /* Viền trên */
+}
+
+/* --- MODAL (Edit Modal) --- */
+.edit-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng viewport */
+    height: 100%; /* Chiếm toàn bộ chiều cao viewport */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    overflow-y: auto;
+    padding: 20px 0; /* Khoảng đệm trên dưới */
+    box-sizing: border-box;
+}
+
+.edit-modal-overlay.active {
+    display: flex;
+}
+
+.edit-modal-content {
+    background-color: var(--section-bg);
+    padding: 25px; /* Khoảng đệm bên trong modal */
+    border-radius: 12px; /* Bo góc modal */
+    box-shadow: var(--box-shadow);
+    width: 90%; /* Chiều rộng tối đa của modal */
+    max-width: 500px; /* Chiều rộng tối đa tuyệt đối */
+    max-height: 90vh; /* Chiều cao tối đa bằng 90% viewport */
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
+
+.edit-modal-overlay.active .edit-modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.edit-modal-content h2 {
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    text-align: center;
+    font-size: 1.6em; /* Kích thước tiêu đề modal */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px; /* Khoảng đệm dưới tiêu đề */
+}
+
+.edit-modal-content .form-group {
+    margin-bottom: 15px; /* Khoảng cách dưới mỗi nhóm form */
+}
+
+.edit-modal-content label {
+    display: block;
+    margin-bottom: 6px; /* Khoảng cách dưới label */
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 0.9em; /* Kích thước chữ label */
+}
+
+.edit-modal-content input[type="text"],
+.edit-modal-content input[type="email"],
+.edit-modal-content input[type="tel"],
+.edit-modal-content textarea {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của form group */
+    padding: 10px; /* Khoảng đệm bên trong input/textarea */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95em; /* Kích thước chữ trong input/textarea */
+    color: var(--text-color);
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-modal-content input[type="text"]:focus,
+.edit-modal-content input[type="email"]:focus,
+.edit-modal-content input[type="tel"]:focus,
+.edit-modal-content textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.25);
+    outline: none;
+}
+
+.edit-modal-content textarea {
+    resize: vertical; /* Cho phép resize theo chiều dọc */
+    min-height: 60px; /* Chiều cao tối thiểu của textarea */
+}
+
+.edit-modal-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em; /* Kích thước icon đóng */
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.edit-modal-content .close-button:hover {
+    color: var(--primary-color);
+}
+
+.edit-modal-content .modal-actions {
+    display: flex;
+    justify-content: flex-end; /* Căn nút sang phải */
+    gap: 10px; /* Khoảng cách giữa các nút */
+    margin-top: 20px; /* Khoảng cách trên */
+}
+
+.edit-modal-content button {
+    padding: 10px 20px; /* Khoảng đệm nút */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em; /* Kích thước chữ nút */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-modal-content button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.edit-modal-content button[type="submit"]:hover {
+    background-color: var(--primary-color-darker);
+}
+
+.edit-modal-content button[type="button"] { /* Cancel button */
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.edit-modal-content button[type="button"]:hover {
+    background-color: #ccc;
+}
+
+/* --- ĐIỀU CHỈNH TRÊN THIẾT BỊ NHỎ HƠN (RESPONSIVE) --- */
+@media (max-width: 900px) {
+     .main-layout-wrapper {
+        flex-direction: column; /* Vẫn xếp chồng các cột */
+        padding: 15px; /* Giảm padding tổng thể */
+        margin-left: 80px; /* Vẫn giữ margin-left bằng chiều rộng của nav */
+        margin-right: 15px; /* Margin phải */
+        margin-top: 15px; /* Margin trên */
+        margin-bottom: 15px; /* Margin dưới */
+        width: auto; /* Chiều rộng tự động co giãn */
+        box-sizing: border-box; /* Đảm bảo padding được tính vào width */
+        min-width: unset; /* Đảm bảo không có min-width cứng nào gây tràn */
+    }
+
+    .personal-info-column {
+        width: auto; /* Cho phép cột thông tin co giãn theo chiều ngang */
+        max-width: none; /* Bỏ giới hạn max-width */
+        margin-right: 0;
+        margin-bottom: 20px;
+        position: static; /* Không dính nữa */
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+        height: auto;
+    }
+
+    /* Đảm bảo thanh nav vẫn cố định và dọc như bạn muốn */
+    .cv-nav-icons {
+        width: 80px;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        padding-top: 20px;
+        border-bottom: none;
+    }
+
+    .nav-links-group {
+       
+        padding-bottom: 20px;
+        flex-wrap: nowrap; /* Cho phép xuống dòng nếu nhiều icon */
+        justify-content: space-around;
+    }
+
+    .cv-nav-icons a {
+        padding: 15px 0; /* Giảm padding cho icon nav */
+        font-size: 1.3em; /* Giảm kích thước icon nav */
+        width: 100%; /* Chiều rộng tự động */
+    }
+
+    .theme-switch-wrapper {
+        display: none; /* Ẩn nút Dark Mode trên màn hình nhỏ nếu không muốn chiếm không gian */
+        /* Hoặc bạn có thể thiết kế lại vị trí của nó */
+    }
+
+    .scrollable-content-column {
+        padding: 0; /* Xóa padding vì các section đã có padding riêng */
+        min-height: auto; /* Bỏ min-height trên mobile */
+    }
+
+    .section {
+        padding: 15px; /* Giảm padding section trên mobile */
+    }
+
+    .section h2 {
+        font-size: 1.8em; /* Giảm kích thước tiêu đề section */
+    }
+
+    .entry-item h3 {
+        font-size: 1.3em; /* Giảm kích thước tiêu đề mục nhập */
+    }
+
+    .entry-item .period {
+        font-size: 1em;
+    }
+
+    .entry-item ul li {
+        font-size: 0.9em;
+    }
+
+    .personal-info-column .contact-details p {
+        font-size: 1em; /* Giảm kích thước chữ thông tin liên hệ */
+    }
+
+    .personal-info-column .about-me p {
+        font-size: 1em; /* Giảm kích thước chữ phần giới thiệu */
+    }
+
+    .social-links {
+        gap: 15px; /* Giảm khoảng cách icon xã hội */
+    }
+
+    .social-links a i {
+        font-size: 2.2em; /* Giảm kích thước icon xã hội */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Đã có một số điều chỉnh trong media query 900px, thêm các điều chỉnh cụ thể hơn nếu cần */
+    .hobby-card {
+        width: calc((100% - 20px) / 2); /* 2 thẻ/hàng */
+        height: 100px;
+        padding: 10px;
+    }
+    .hobby-card img {
+        max-width: 45px;
+        margin-bottom: 8px;
+    }
+    .hobby-card p {
+        font-size: 0.9em;
+    }
+
+    .skill-card {
+        width: calc((100% - 20px) / 2); /* 2 thẻ/hàng, 1 khoảng gap (1*20px = 20px) */
+        height: 100px; /* Giảm chiều cao thẻ trên di động */
+        padding: 10px;
+    }
+    .skill-card img {
+        max-width: 45px; /* Giảm kích thước icon trên di động */
+        margin-bottom: 8px;
+    }
+    .skill-card p {
+        font-size: 0.9em; /* Giảm kích thước chữ kỹ năng trên di động */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-layout-wrapper {
+        padding: 10px; /* Giảm padding hơn nữa khi rất nhỏ */
+        margin-left: 80px; /* Vẫn giữ margin-left bằng chiều rộng của nav */
+        margin-right: 10px; /* Giảm margin phải */
+        margin-top: 10px;
+        margin-bottom: 10px;
+        min-width: unset; /* Đảm bảo không có min-width cứng nào gây tràn */
+    }
+
+    .personal-info-column {
+        padding: 15px; /* Giảm padding cho cột thông tin cá nhân */
+    }
+
+    /* Giảm kích thước avatar và chữ để nó vừa hơn */
+    .avatar-container {
+        width: 140px; /* Giảm kích thước avatar */
+        height: 140px;
+    }
+    .personal-info-column h1 {
+        font-size: 1.5em; /* Giảm kích thước tên */
+    }
+    .personal-info-column .tagline {
+        font-size: 0.8em; /* Giảm kích thước tagline */
+    }
+    .personal-info-column .contact-details p,
+    .personal-info-column .about-me p {
+        font-size: 0.9em; /* Giảm kích thước chữ thông tin và giới thiệu */
+    }
+
+    .social-links a i {
+        font-size: 2.5em; /* Giảm kích thước icon mạng xã hội */
+    }
+
+    /* Điều chỉnh các hobby-card và skill-card để không bị tràn */
+    .hobbies-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Giảm khoảng cách */
+    }
+    .hobby-card {
+        width: 90%; /* Cho hobby-card chiếm gần hết chiều rộng */
+        max-width: 250px; /* Giới hạn max width */
+        margin: 0 auto;
+        height: auto; /* Cho phép chiều cao tự động điều chỉnh */
+        padding: 10px;
+    }
+    .hobby-card img {
+        max-width: 50px;
+        margin-bottom: 5px;
+    }
+    .hobby-card p {
+        font-size: 1em;
+    }
+
+    .skills-content.active {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .skill-card {
+        width: 90%; /* Cho skill-card chiếm gần hết chiều rộng */
+        max-width: 250px; /* Giới hạn max width */
+        margin: 0 auto;
+        height: auto; /* Cho phép chiều cao tự động điều chỉnh */
+        padding: 10px;
+    }
+    .skill-card img {
+        max-width: 50px;
+        margin-bottom: 5px;
+    }
+    .skill-card p {
+        font-size: 1em;
+    }
+
+    .section {
+        padding: 10px; /* Giảm padding cho các section */
+        margin-bottom: 15px; /* Giảm margin giữa các section */
+    }
+
+    .section h2 {
+        font-size: 1.6em; /* Giảm kích thước tiêu đề section */
+        margin-bottom: 10px;
+    }
+
+    .entry-item {
+        padding-left: 10px;
+    }
+    .entry-item h3 {
+        font-size: 1.2em;
+    }
+    .entry-item .period {
+        font-size: 0.9em;
+    }
+    .entry-item ul li {
+        font-size: 0.85em;
+    }
+
+    .khung-chua-icon { /* Đảm bảo icon bouncing không tràn */
+        height: 60px;
+    }
+    .icon-nho-nho {
+        font-size: 35px;
+    }
+    @keyframes nhatVaDap {
+        0% { transform: translateX(-30px); }
+        100% { transform: translateX(30px); }
+    }
+}

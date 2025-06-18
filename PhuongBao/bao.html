@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Của Phạm Lâm Phương Bảo</title>
+    <link rel="stylesheet" href="assets/css/bao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <nav class="sidebar-nav" id="sidebarNav">
+        <div class="sidebar-header">
+            <img src="assets/images/PB1.jpg" alt="Ảnh cá nhân của bạn" class="sidebar-avatar">
+            <h2>Phạm Lâm Phương Bảo</h2>
+            <p>Digital CV</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" onclick="scrollToSection('about', event)"><i class="fas fa-user-circle"></i> Thông tin cá nhân</a></li>
+            <li><a href="#career" onclick="scrollToSection('career', event)"><i class="fas fa-bullseye"></i> Mục tiêu nghề nghiệp</a></li>
+            <li><a href="#hobbies" onclick="scrollToSection('hobbies', event)"><i class="fas fa-heart"></i> Sở thích</a></li>
+            <li><a href="#skills" onclick="scrollToSection('skills', event)"><i class="fas fa-cogs"></i> Kỹ năng</a></li>
+            <li><a href="#experience" onclick="scrollToSection('experience', event)"><i class="fas fa-project-diagram"></i> Dự án</a></li>
+            <li><a href="#contact" onclick="scrollToSection('contact', event)"><i class="fas fa-address-book"></i> Liên hệ</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="https://github.com/phuongbao2310" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://web.facebook.com/jenz2190/?locale=vi_VN" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/_petrichor.05_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+     <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+    </label>
+    <span class="switch-label">Chế độ Tương phản</span>
+</div>
+
+<button class="toggle-sidebar-btn" id="toggleSidebarBtn">
+    <i class="fas fa-bars"></i>
+</button>
+        
+    </nav>
+
+    <div class="main-content-wrapper" id="mainContentWrapper">
+        <header class="header">
+            <div class="banner">
+                <div class="container banner-content">
+                    <img src="assets/images/PB1.jpg" alt="Ảnh cá nhân của bạn" class="profile-avatar-large">
+                    <h1>Phạm Lâm Phương Bảo</h1>
+                    <p class="tagline">DEVELOPER | CREATIVE | CAREFUL</p>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Đặt container sao băng ở đây -->
+        <div class="shooting-stars-container">
+            <div class="shooting-star star-1"></div>
+            <div class="shooting-star star-2"></div>
+            <div class="shooting-star star-3"></div>
+            <div class="shooting-star star-4"></div>
+            <div class="shooting-star star-5"></div>
+            <div class="shooting-star star-6"></div>
+            <div class="shooting-star star-7"></div>
+            <div class="shooting-star star-8"></div>
+            <div class="shooting-star star-9"></div>
+            <div class="shooting-star star-10"></div>
+            <div class="shooting-star star-11"></div>
+            <div class="shooting-star star-12"></div>
+            <div class="shooting-star star-13"></div>
+            <div class="shooting-star star-14"></div>
+            <div class="shooting-star star-15"></div>
+            <div class="shooting-star star-16"></div>
+            <div class="shooting-star star-17"></div>
+            <div class="shooting-star star-18"></div>
+            <div class="shooting-star star-19"></div>
+            <div class="shooting-star star-20"></div>
+        </div>
+
+        <main>
+    
+
+            <div class="container main-sections">
+                <section id="about" class="section-card fade-in">
+                    <h2 class="section-title">THÔNG TIN CÁ NHÂN</h2>
+                    <div class="about-grid">
+                        <div class="about-item" data-section="about">
+                            <i class="fas fa-user-circle icon-large"></i>
+                            <h3>Họ và Tên</h3>
+                            <p data-field="name">Phạm Lâm Phương Bảo</p>
+                        </div>
+                        <div class="about-item" data-section="about">
+                            <i class="fas fa-birthday-cake icon-large"></i>
+                            <h3>Ngày sinh</h3>
+                            <p data-field="dob">23/10/2005</p>
+                        </div>
+                        <div class="about-item" data-section="about">
+                            <i class="fas fa-map-marker-alt icon-large"></i>
+                            <h3>Địa chỉ</h3>
+                            <p data-field="address">Định An, Trà Cú, Trà Vinh</p>
+                        </div>
+                        <div class="about-item" data-section="about">
+                            <i class="fas fa-venus-mars icon-large"></i> <h3>Giới tính</h3>
+                            <p data-field="gender">Nam</p>
+                        </div>
+                        <div class="about-item" data-section="about">
+                            <i class="fas fa-globe-americas icon-large"></i> <h3>Quốc tịch</h3>
+                            <p data-field="nationality">Việt Nam</p>
+                        </div>
+                        <div class="about-item" data-section="about">
+                            <i class="fas fa-heart icon-large"></i> <h3>Tình trạng hôn nhân</h3>
+                            <p data-field="marital-status">Đang tìm hiểu</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="career" class="section-card fade-in">
+                    <h2 class="section-title">Giới Thiệu</h2>
+                    <p class="career-goal" data-field="career-goal">
+                        Hiện tại tôi đang là sinh viên ngành Công nghệ thông tin tại Trường Đại học Giao thông vận tải Thành phố Hồ Chí Minh.
+                        Với những khả năng hiện có của mình, tôi cam kết sẽ hoàn thành tốt những dự án nằm trong lĩnh vực của mình.
+                       Tôi thật sự muốn trở thành một người tự do, có thể theo đuổi cũng như làm tất cả những gì bản thân yêu thích và khao khát, không bị gò bó bởi bất cứ thứ gì.
+                    </p>
+                </section>
+
+                <section id="hobbies" class="section-card fade-in">
+                    <h2 class="section-title">SỞ THÍCH</h2>
+                    <div class="hobbies-grid">
+                        <div class="hobby-item">
+                            <i class="fas fa-gamepad icon-medium"></i>
+                            <p>Chơi game</p>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-book-reader icon-medium"></i>
+                            <p>Đọc sách</p>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-headphones icon-medium"></i>
+                            <p>Nghe nhạc</p>
+                        </div>
+                    
+                        <div class="hobby-item">
+                            <i class="fas fa-utensils icon-medium"></i>
+                            <p>Nấu ăn</p>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-film icon-medium"></i>
+                            <p>Xem phim</p>
+                        </div>
+                    </div>
+                
+                </section>
+
+                <section id="skills" class="section-card fade-in">
+                    <h2 class="section-title">KỸ NĂNG</h2>
+                    <div class="skills-flex">
+                        <div class="skill-category" data-category-id="programming">
+                            <h3><i class="fas fa-code"></i> Kỹ năng lập trình</h3>
+                            <ul class="skill-list">
+                                
+                                <li data-field="skill">HTML / CSS</li>
+                                
+                                <li data-field="skill">Git / GitHub</li>
+                                <li data-field="skill">SQL </li>
+
+                            </ul>
+                            <div class="add-new-item add-skill-div">
+                                <input type="text" class="new-skill-input" placeholder="Kỹ năng mới">
+                                <button class="add-item-btn add-specific-skill-btn"><i class="fas fa-plus"></i> Thêm</button>
+                            </div>
+                        </div>
+                        <div class="skill-category" data-category-id="tools">
+                            <h3><i class="fas fa-tools"></i> Công cụ & Kỹ thuật</h3>
+                            <ul class="skill-list">
+                                <li data-field="skill">VS Code</li>
+                                <li data-field="skill">Figma </li>
+                                
+                               
+                                
+                                <li data-field="skill">Teamwork</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience" class="section-card fade-in">
+                    <h2 class="section-title">DỰ ÁN TIÊU BIỂU</h2>
+                    <div class="project-grid">
+                        <div class="project-item" data-project-id="1">
+                            <h3 data-field="project-title">Dự án: Trang chủ và CV bản thân</h3>
+                            <p class="project-role" data-field="project-role">Là người xây dựng dự án.</p>
+                            <p class="project-description" data-field="project-description">
+                               Xây dựng một trang web cá nhân để giới thiệu bản thân, kỹ năng và dự án. Trang web bao gồm các phần thông tin cá nhân, mục tiêu nghề nghiệp, sở thích, kỹ năng và dự án tiêu biểu.
+                            </p>
+                            <ul class="project-tech-stack" data-field="project-tech-stack">
+                                <li data-field="tech">HTML</li>
+                                <li data-field="tech">CSS3</li>
+                                <li data-field="tech">Clean Code, Comment</li>
+                                
+                            </ul>
+                            <a href="https://github.com/phuongbao2310/Giao-di-n-Web" target="_blank" class="btn-project">Xem dự án <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <div class="project-item" data-project-id="2">
+                            <h3 data-field="project-title">Dự án: HIV Treatment and Medical Services System</h3>
+                            <p class="project-role" data-field="project-role">Cập nhật nội dung lên Git</p>
+                            <p class="project-description" data-field="project-description">
+                                Là một phần mềm hỗ trợ người bệnh HIV tiếp cận dịch vụ y tế một cách an toàn, tiện lợi và riêng tư.
+                            </p>
+                            <ul class="project-tech-stack" data-field="project-tech-stack">
+                                <li data-field="tech">Java JDK 23</li>
+                                <li data-field="tech">Spring Boot (Backend)</li>
+                                <li data-field="tech">MySQL/PostgreSQL (Database)</li>
+                                <li data-field="tech">ReactJS / Next.js</li>
+                            </ul>
+                            <a href="https://github.com/VinhPhus/hiv-medical-service-system" target="_blank" class="btn-project">Xem dự án <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section id="contact" class="section-card fade-in">
+                    <h2 class="section-title">LIÊN HỆ</h2>
+                    <div class="contact-grid">
+                        <div class="contact-info-item" data-contact-id="github">
+                            <i class="fab fa-github icon-large"></i>
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/phuongbao2310" target="_blank" data-field="link">BaoPhwww</a>
+                        </div>
+                        <div class="contact-info-item" data-contact-id="facebook">
+                            <i class="fab fa-facebook-f icon-large"></i>
+                            <h3>Facebook</h3>
+                            <a href="https://web.facebook.com/jenz2190/?locale=vi_VN" target="_blank" data-field="link">Phạm Lâm Phương Bảo</a>
+                        </div>
+                        <div class="contact-info-item" data-contact-id="instagram">
+                            <i class="fab fa-instagram icon-large"></i>
+                            <h3>Instagram</h3>
+                            <a href="https://www.instagram.com/_petrichor.05_/" target="_blank" data-field="link">_petrichor.05_</a>
+                        </div>
+                        <div class="contact-info-item" data-contact-id="email">
+                            <i class="fas fa-envelope icon-large"></i>
+                            <h3>Email</h3>
+                            <a href="mailto:archerhelmsley@gmail.com" data-field="link">archerhelmsley@gmail.com</a>
+                        </div>
+                        <div class="contact-info-item" data-contact-id="phone">
+                            <i class="fas fa-phone-alt icon-large"></i>
+                            <h3>Điện thoại</h3>
+                            <span data-field="text">0383973851</span>
+                        </div>
+                        
+                    </div>
+                    <button class="add-contact-btn edit-btn-section" style="margin-top: 30px;"><i class="fas fa-plus"></i> Thêm Liên hệ</button>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Phạm Lâm Phương Bảo. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+
+
+    <script src="assets/js/bao.js"></script>
+    <script src="assets/js/smooth-scroll.js"></script>
+</body>
+</html>

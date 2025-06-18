@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_Digital_Cv</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/setting.css">
+    <link rel="stylesheet" href="assets/css/project.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!--Sildebar-->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="assets/images/LogoH.png" alt="Logo">
+                </span>
+                <div class="text header-text">
+                    <span class="name">HuyDev</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
+            <i class="fa-regular fa-circle-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class="fa-solid fa-magnifying-glass icon"></i>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#Home" title="Home">
+                            <i class="fa-solid fa-house icon"></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#About" title="About">
+                            <i class="fa-solid fa-address-card icon"></i>
+                            <span class="text nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#Project" title="Project">
+                            <i class="fa-solid fa-diagram-project icon"></i>
+                            <span class="text nav-text">Project</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#Contact" title="Contact">
+                            <i class="fa-solid fa-phone icon"></i>
+                            <span class="text nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class="fa-solid fa-moon icon moon"></i>
+                        <i class="fa-solid fa-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+
+<!--Home-->
+    <section class="home-section" id="Home">
+        <div class="home-content">
+            <div class="home-text">
+                <span class="hello">Hello, I'm</span>
+                <h1 class="name" id="display-name">Huỳnh Nhất Huy</h1>
+                <div class="typing"></div>
+                <p class="desc" id="display-decs">Welcome to My personal website. <span>👋</span></p>
+                <div class="social-links">
+                    <a href="https://github.com/HuyStDev" class="github-icon" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/nhat.huyy.321428?locale=vi_VN" class="facebook-icon" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@huynhnhathuy92?lang=vi-VN" class="tiktok-icon" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                <div class="home-btn-center">
+                    <a href="assets/files/HuynhNhatHuy_CV.pdf" class="download-cv-btn" download>
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="home-avatar">
+                <div class="avatar-glow">
+                    <img src="assets/images/Ảnh.jpg" alt="Avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--About-->
+    <section class="about-section" id="About">
+        <div class="about-block">
+            <h2 class="about-title">About Me <span class="about-title-underline"></span></h2>
+            <div class="about-main about-card">
+                <div class="about-avatar about-avatar-large">
+                    <img src="assets/images/Ảnh.jpg" alt="Ảnh đại diện" width="200">
+                </div>
+                <div class="about-info">
+                    <div class="about-tabs">
+                        <button class="about-tab active" onclick="showAboutTab('personal')"><i class="fa-solid fa-user"></i> Thông tin cá nhân</button>
+                        <button class="about-tab" onclick="showAboutTab('summary')"><i class="fa-solid fa-lightbulb"></i> Sơ lược bản thân</button>
+                        <button class="about-tab" onclick="showAboutTab('career')"><i class="fa-solid fa-bullseye"></i> Mục tiêu nghề nghiệp</button>
+                    </div>
+                    <div class="about-tab-content active" id="about-personal">
+                        <ul>
+                            <li><i class="fa-solid fa-calendar"></i> Ngày sinh: 19/06/2005</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Địa chỉ: Đường 14, Phường 5, Quận Gò Vấp, TP.HCM</li>
+                            <li><i class="fa-solid fa-envelope"></i> Email: nhathuyhuynh240@gmail.com</li>
+                            <li><i class="fa-solid fa-phone"></i> SĐT: 0339536896</li>
+                            <li><i class="fa-solid fa-heart"></i> Sở thích: Lập trình, thiết kế web, chơi game</li>
+                        </ul>
+                    </div>
+                    <div class="about-tab-content" id="about-summary">
+                        <p>
+                            Chào bạn! Tôi là Huỳnh Nhất Huy, hiện đang là sinh viên năm hai ngành Công nghệ thông tin tại Đại học Giao thông vận tải TP.HCM. Tôi là một người trẻ năng động, luôn tìm kiếm cơ hội để học hỏi và phát triển bản thân.<br><br>
+                            Với niềm đam mê lớn dành cho lập trình, tôi đặc biệt hứng thú với lĩnh vực phát triển web. Tôi đang nỗ lực không ngừng để trau dồi kiến thức và kỹ năng, với mục tiêu trở thành một nhà phát triển web chuyên nghiệp và tạo ra những giải pháp công nghệ hiệu quả.
+                        </p>
+                    </div>
+                    <div class="about-tab-content" id="about-career">
+                        <ul>
+                            <li><b>Vị trí mong muốn:</b> Front-end Developer tại công ty công nghệ lớn.</li>
+                            <li><b>Chuyên môn:</b> Phát triển website quy mô lớn, phục vụ hàng triệu người dùng.</li>
+                            <li><b>Vai trò:</b> Không chỉ viết code, mà còn định hình trải nghiệm người dùng.</li>
+                            <li><b>Hành động cốt lõi:</b>
+                                <ul>
+                                    <li>Xây dựng danh mục đầu tư (portfolio) ấn tượng.</li>
+                                    <li>Thể hiện khả năng xử lý vấn đề phức tạp.</li>
+                                    <li>Tối ưu hiệu suất website.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-skills">
+            <h2 class="about-title">Skills <span class="about-title-underline"></span></h2>
+            <div class="skills-tabs">
+                <button class="skills-tab active" onclick="showTab('tech')">Tech Stack</button>
+                <button class="skills-tab" onclick="showTab('tools')">Tools</button>
+                <button class="skills-tab" onclick="showTab('english')">English</button>
+                <button class="skills-tab" onclick="showTab('certificate')">IT Certificate</button>
+            </div>
+            <div class="skills-list skills-grid" id="skills-tech">
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-brands fa-html5" style="color:#e44d26"></i></span>
+                        <span class="skill-name">HTML5</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="90"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-brands fa-css3-alt" style="color:#1572b6"></i></span>
+                        <span class="skill-name">CSS3</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="85"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-brands fa-js" style="color:#f7df1e"></i></span>
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percent">65%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="65"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-list skills-grid" id="skills-tools" style="display:none;">
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-brands fa-git-alt" style="color:#f34f29"></i></span>
+                        <span class="skill-name">Git</span>
+                        <span class="skill-percent">30%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="30"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-brands fa-github" style="color:#24292e"></i></span>
+                        <span class="skill-name">GitHub</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="90"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-code" style="color:#0078d7"></i></span>
+                        <span class="skill-name">VS Code</span>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="95"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-database" style="color:#00758f"></i></span>
+                        <span class="skill-name">MySQL</span>
+                        <span class="skill-percent">65%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="65"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-list skills-grid" id="skills-english" style="display:none;">
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-language" style="color:#1976d2"></i></span>
+                        <span class="skill-name">Reading</span>
+                        <span class="skill-percent">83%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="83"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-language" style="color:#1976d2"></i></span>
+                        <span class="skill-name">Writing</span>
+                        <span class="skill-percent">30%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="30"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-language" style="color:#1976d2"></i></span>
+                        <span class="skill-name">Speaking</span>
+                        <span class="skill-percent">60%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-list skills-grid" id="skills-certificate" style="display:none;">
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-certificate" style="color:#ff9800"></i></span>
+                        <span class="skill-name">MOS Word</span>
+                        <span class="skill-percent">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="0"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-info">
+                        <span class="skill-icon"><i class="fa-solid fa-certificate" style="color:#ff9800"></i></span>
+                        <span class="skill-name">MOS Excel</span>
+                        <span class="skill-percent">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" data-percent="0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Project-->
+    <section class="project-section" id="Project">
+        <div class="project-block">
+            <div class="project-title-row">
+                <h2 class="project-title">Project</h2>
+                <span class="project-title-underline"></span>
+            </div>
+            <p class="project-desc"><b>Đây là một số project của tôi:</p></b>
+            <div class="project-grid project-slider">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="assets/images/Anh_project_1.png" alt="Personal Website">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-name">Personal Website</h3>
+                        <p class="project-info">
+                            Trang web cá nhân bằng HTML, CSS, JavaScript.<br>
+                            Hiển thị thông tin, kỹ năng, dự án.<br>
+                            Thiết kế chuyên nghiệp, thu hút nhà tuyển dụng.
+                        </p>
+                        <div class="project-tech">HTML, CSS, JavaScript</div>
+                        <div class="project-links">
+                            <a href="https://github.com/HuyStDev" title="View Source"><i class="fa-brands fa-github"></i></a>
+                            <a href="#Home" title="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project đang update -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="assets/images/Load.jpg" alt="Update...">
+                        <div class="project-loading"></div>
+                        <span class="project-loading-text">Đang cập nhật...</span>
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="project-name">Update...</h3>
+                        <p class="project-info">Dự án sẽ được cập nhật sớm.</p>
+                        <div class="project-tech">Update...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--Contact-->
+    <section class="contact-section" id="Contact">
+        <div class="contact-block">
+            <div class="contact-title-row">
+                <h2 class="contact-title">Contact Me!</h2>
+                <span class="contact-title-underline"></span>
+            </div>
+
+            <div class="contact-content-wrapper">
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>nhathuyhuynh240@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0339536896</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Đường 14, Phường 5, Quận Gò Vấp, TP.HCM</span>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="https://getform.io/f/agdlpnmb" method="POST">
+                    <div class="form-row">
+                        <input type="text" class="form-input" placeholder="Full Name" name="fullname" required>
+                        <input type="email" class="form-input" placeholder="Email Address" name="email" required>
+                    </div>
+                    <textarea class="form-textarea" placeholder="Your Message" name="message" rows="5" required></textarea>
+                    <button type="submit" class="send-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!--Footer-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social-links">
+                <a href="https://www.facebook.com/nhat.huyy.321428?locale=vi_VN" class="facebook-icon" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.tiktok.com/@huynhnhathuy92?lang=vi-VN" class="tiktok-icon" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://github.com/HuyStDev" class="github-icon" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p class="footer-copyright">&copy; 2025 Huỳnh Nhất Huy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/about.js"></script>
+    <script src="assets/js/project.js"></script>
+</body>
+</html>
